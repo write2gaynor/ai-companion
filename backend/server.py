@@ -377,11 +377,25 @@ async def chat_with_ai(chat_request: ChatRequest, user_id: str = Depends(get_cur
 @api_router.get("/chat/history/{session_id}")
 async def get_chat_history(session_id: str, user_id: str = Depends(get_current_user_id)):
     """Get chat history for a session"""
-    messages = await db.chat_messages.find(
-        {"user_id": user_id, "session_id": session_id}
-    ).sort("timestamp", 1).to_list(100)
-    
-    return {"messages": [parse_from_mongo(msg) for msg in messages]}
+    try:
+        messages = await db.chat_messages.find(
+            {"user_id": user_id, "session_id": session_id}
+        ).sort("timestamp", 1).to_list(100)
+        
+        parsed_messages = []
+        for msg in messages:
+            try:
+                parsed_msg = parse_from_mongo(msg)
+                parsed_messages.append(parsed_msg)
+            except Exception as e:
+                logging.error(f"Error parsing message {msg.get('id', 'unknown')}: {e}")
+                # Skip malformed messages but continue processing others
+                continue
+        
+        return {"messages": parsed_messages}
+    except Exception as e:
+        logging.error(f"Error fetching chat history: {e}")
+        raise HTTPException(status_code=500, detail="Failed to fetch chat history")
 
 # Task Management Routes
 @api_router.get("/tasks", response_model=List[Task])
