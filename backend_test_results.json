@@ -1,0 +1,88 @@
+{
+  "summary": {
+    "total_tests": 13,
+    "passed_tests": 12,
+    "success_rate": 92.3076923076923,
+    "timestamp": "2025-10-03T12:41:14.201472"
+  },
+  "test_results": [
+    {
+      "test_name": "Health Check",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2025-10-03T12:41:08.904028"
+    },
+    {
+      "test_name": "User Registration",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2025-10-03T12:41:08.976144"
+    },
+    {
+      "test_name": "Register for Login Test",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2025-10-03T12:41:09.016082"
+    },
+    {
+      "test_name": "User Login",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2025-10-03T12:41:09.059888"
+    },
+    {
+      "test_name": "Get Profile",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2025-10-03T12:41:09.140430"
+    },
+    {
+      "test_name": "Get Personality Quiz",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2025-10-03T12:41:09.417917"
+    },
+    {
+      "test_name": "Update Personality Profile",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2025-10-03T12:41:09.463788"
+    },
+    {
+      "test_name": "Create Task",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2025-10-03T12:41:09.818652"
+    },
+    {
+      "test_name": "Get All Tasks",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2025-10-03T12:41:09.861665"
+    },
+    {
+      "test_name": "Update Task",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2025-10-03T12:41:09.901015"
+    },
+    {
+      "test_name": "Delete Task",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2025-10-03T12:41:11.303563"
+    },
+    {
+      "test_name": "AI Chat",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2025-10-03T12:41:14.140908"
+    },
+    {
+      "test_name": "Get Chat History",
+      "success": false,
+      "details": "Status: 500 (Expected: 200), Response: Internal Server Error",
+      "timestamp": "2025-10-03T12:41:14.200693"
+    }
+  ]
+}
