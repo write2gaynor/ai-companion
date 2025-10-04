@@ -71,12 +71,14 @@ const AuthProvider = ({ children }) => {
       const response = await axios.post(`${API}/auth/login`, credentials);
       const { access_token, user: userData } = response.data;
       
+      console.log('Login response user data:', userData);
+      
       localStorage.setItem('token', access_token);
       setToken(access_token);
       axios.defaults.headers.common['Authorization'] = `Bearer ${access_token}`;
       
-      // Get the full profile with personality data
-      await getProfile();
+      // Set user data from login response first (it should already have personality_profile)
+      setUser(userData);
       
       toast.success('Welcome back!');
       return true;
