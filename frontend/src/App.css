@@ -235,6 +235,21 @@ html, body {
   color: inherit;
 }
 
+/* Hide watermark button globally to prevent interference */
+div[class*="watermark"],
+a[href*="emergent.sh"],
+a[href*="emergentagent.com"],
+button:contains("Made with Emergent"),
+*[title*="Made with Emergent"],
+*[alt*="Made with Emergent"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  z-index: -9999 !important;
+  position: absolute !important;
+  top: -9999px !important;
+}
+
 /* Prevent text selection on buttons and interactive elements */
 .no-select {
   -webkit-user-select: none;
