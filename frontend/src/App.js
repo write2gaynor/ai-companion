@@ -455,18 +455,48 @@ const ChatInterface = () => {
     }
   };
 
+  const startNewConversation = () => {
+    // Clear current session
+    localStorage.removeItem(`chat_session_${user.id}`);
+    setSessionId(null);
+    initializeNewChat();
+    toast.success('Started new conversation!');
+  };
+
+  if (isLoadingHistory) {
+    return (
+      <div className="flex flex-col h-full items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mb-4"></div>
+        <p className="text-gray-600">Loading your conversation history...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col h-full">
       {/* Chat Header */}
       <div className="border-b bg-white/80 backdrop-blur-sm p-4">
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-            <Bot className="w-6 h-6 text-white" />
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+              <Bot className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h2 className="font-semibold text-gray-900">AI Companion</h2>
+              <p className="text-sm text-gray-500">
+                {messages.length > 1 ? 'Continuing your conversation' : 'Always here to help'}
+              </p>
+            </div>
           </div>
-          <div>
-            <h2 className="font-semibold text-gray-900">AI Companion</h2>
-            <p className="text-sm text-gray-500">Always here to help</p>
-          </div>
+          <Button
+            data-testid="new-conversation-btn"
+            variant="outline"
+            size="sm"
+            onClick={startNewConversation}
+            className="text-blue-600 border-blue-300 hover:bg-blue-50"
+          >
+            New Chat
+          </Button>
         </div>
       </div>
 
