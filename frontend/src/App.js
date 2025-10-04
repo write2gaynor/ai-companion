@@ -882,15 +882,31 @@ const ProfileSection = () => {
 
 // Main Dashboard
 const Dashboard = () => {
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
   const [showQuiz, setShowQuiz] = useState(false);
+  const [profileLoaded, setProfileLoaded] = useState(false);
 
   useEffect(() => {
-    // Show personality quiz if user hasn't completed it
-    if (user && (!user.personality_profile || Object.keys(user.personality_profile).length === 0)) {
-      setShowQuiz(true);
+    if (user && !loading) {
+      setProfileLoaded(true);
+      // Show personality quiz if user hasn't completed it
+      const hasProfile = user.personality_profile && Object.keys(user.personality_profile).length > 0;
+      console.log('User profile check:', { hasProfile, profile: user.personality_profile });
+      setShowQuiz(!hasProfile);
     }
-  }, [user]);
+  }, [user, loading]);
+
+  // Show loading while auth is loading or profile isn't loaded yet
+  if (loading || !profileLoaded) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading your profile...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (showQuiz) {
     return <PersonalityQuiz onComplete={() => setShowQuiz(false)} />;
