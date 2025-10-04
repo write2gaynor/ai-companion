@@ -893,8 +893,16 @@ const Dashboard = () => {
       setProfileLoaded(true);
       // Show personality quiz if user hasn't completed it
       const hasProfile = user.personality_profile && Object.keys(user.personality_profile).length > 0;
-      console.log('User profile check:', { hasProfile, profile: user.personality_profile });
+      console.log('Dashboard - User profile check:', {
+        user: user,
+        hasProfile,
+        profile: user.personality_profile,
+        profileKeys: user.personality_profile ? Object.keys(user.personality_profile) : [],
+        loading
+      });
       setShowQuiz(!hasProfile);
+    } else {
+      console.log('Dashboard - Waiting for user or still loading:', { user: !!user, loading });
     }
   }, [user, loading]);
 
