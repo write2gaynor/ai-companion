@@ -73,8 +73,10 @@ const AuthProvider = ({ children }) => {
       
       localStorage.setItem('token', access_token);
       setToken(access_token);
-      setUser(userData);
       axios.defaults.headers.common['Authorization'] = `Bearer ${access_token}`;
+      
+      // Get the full profile with personality data
+      await getProfile();
       
       toast.success('Welcome back!');
       return true;
