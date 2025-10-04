@@ -57,6 +57,7 @@ const AuthProvider = ({ children }) => {
   const getProfile = async () => {
     try {
       const response = await axios.get(`${API}/profile`);
+      console.log('Profile response:', response.data);
       setUser(response.data);
     } catch (error) {
       console.error('Failed to get profile:', error);
