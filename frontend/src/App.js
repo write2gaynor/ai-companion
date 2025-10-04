@@ -255,31 +255,47 @@ const PersonalityQuiz = ({ onComplete }) => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 p-4 pb-20 flex items-center justify-center relative z-50">
-      <div className="w-full max-w-2xl max-h-[85vh] flex flex-col">
-        <Card className="shadow-lg border-0 bg-white/95 backdrop-blur-sm flex flex-col h-full relative z-50">
-          <CardHeader className="text-center flex-shrink-0">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 p-4 flex items-center justify-center">
+      <style jsx>{`
+        /* Hide the watermark button during quiz */
+        [data-testid*="watermark"], 
+        .watermark,
+        a[href*="emergent"],
+        div:has(> a[href*="emergent"]),
+        button:contains("Made with Emergent"),
+        *[class*="watermark"] {
+          display: none !important;
+          visibility: hidden !important;
+          pointer-events: none !important;
+          z-index: -1 !important;
+        }
+      `}</style>
+      <div className="w-full max-w-3xl h-[80vh] flex flex-col relative" style={{zIndex: 9999}}>
+        <Card className="shadow-xl border-0 bg-white/98 backdrop-blur-sm flex flex-col h-full relative" style={{zIndex: 9999}}>
+          <CardHeader className="text-center flex-shrink-0 p-6">
             <CardTitle className="text-2xl font-bold text-blue-600">Let's Get to Know You</CardTitle>
-            <CardDescription>
+            <CardDescription className="text-gray-600">
               Answer these questions to help your AI companion adapt to your personality
             </CardDescription>
           </CardHeader>
-          <div className="flex-1 overflow-y-auto px-6">
-            <div className="space-y-6 pb-6">
+          
+          <div className="flex-1 overflow-y-auto px-6 pb-4" style={{maxHeight: 'calc(80vh - 200px)'}}>
+            <div className="space-y-6">
               {questions.map((question, questionIndex) => (
-                <div key={question.id} className="space-y-3 bg-white/50 p-4 rounded-lg">
-                  <h3 className="font-medium text-gray-900 text-lg">
-                    {questionIndex + 1}. {question.question}
+                <div key={question.id} className="space-y-4 bg-gradient-to-r from-blue-50 to-indigo-50 p-5 rounded-xl border border-blue-100">
+                  <h3 className="font-semibold text-gray-900 text-lg">
+                    Question {questionIndex + 1}: {question.question}
                   </h3>
-                  <div className="grid grid-cols-1 gap-3">
+                  <div className="space-y-3">
                     {question.options.map((option, index) => (
                       <label 
                         key={index} 
-                        className={`flex items-center space-x-3 p-4 rounded-lg border-2 cursor-pointer transition-all hover:shadow-sm ${
+                        className={`flex items-center space-x-4 p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 hover:shadow-md ${
                           answers[question.id] === option 
-                            ? 'border-blue-500 bg-blue-50 shadow-sm' 
-                            : 'border-gray-200 hover:border-blue-300 bg-white'
+                            ? 'border-blue-500 bg-blue-100 shadow-md ring-2 ring-blue-200' 
+                            : 'border-gray-200 hover:border-blue-300 bg-white hover:bg-blue-50'
                         }`}
+                        style={{zIndex: 9999, position: 'relative'}}
                       >
                         <input
                           type="radio"
@@ -287,36 +303,41 @@ const PersonalityQuiz = ({ onComplete }) => {
                           value={option}
                           checked={answers[question.id] === option}
                           onChange={(e) => setAnswers({ ...answers, [question.id]: e.target.value })}
-                          className="text-blue-600 focus:ring-blue-500 w-4 h-4"
+                          className="text-blue-600 focus:ring-blue-500 w-5 h-5"
+                          style={{zIndex: 9999}}
                         />
-                        <span className="text-gray-700 flex-1">{option}</span>
+                        <span className="text-gray-800 flex-1 font-medium">{option}</span>
                         {answers[question.id] === option && (
-                          <div className="text-blue-500 text-sm font-medium">✓</div>
+                          <div className="text-blue-600 text-lg font-bold">✓</div>
                         )}
                       </label>
                     ))}
                   </div>
                 </div>
               ))}
-              {/* Extra bottom padding to ensure content is not hidden behind watermark */}
-              <div className="h-16"></div>
+              {/* Extra space at bottom */}
+              <div className="h-20"></div>
             </div>
           </div>
-          <div className="flex-shrink-0 p-6 pt-4 bg-white border-t">
-            <div className="text-center mb-3">
-              <span className="text-sm text-gray-500">
-                Progress: {Object.keys(answers).length} of {questions.length} questions answered
-              </span>
+          
+          <div className="flex-shrink-0 p-6 bg-white border-t border-gray-200" style={{zIndex: 9999}}>
+            <div className="text-center mb-4">
+              <div className="bg-blue-100 rounded-full px-4 py-2 inline-block">
+                <span className="text-blue-800 font-medium">
+                  Progress: {Object.keys(answers).length} of {questions.length} completed
+                </span>
+              </div>
             </div>
             <Button
               data-testid="submit-quiz-btn"
               onClick={handleSubmit}
               disabled={Object.keys(answers).length !== questions.length}
-              className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 py-3"
+              className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 py-4 text-lg font-semibold"
+              style={{zIndex: 9999, position: 'relative'}}
             >
               {Object.keys(answers).length === questions.length 
-                ? 'Complete Setup ✨' 
-                : `Continue (${Object.keys(answers).length}/${questions.length})`
+                ? '🎉 Complete Setup & Meet Your AI Companion!' 
+                : `Continue Quiz (${Object.keys(answers).length}/${questions.length})`
               }
             </Button>
           </div>
