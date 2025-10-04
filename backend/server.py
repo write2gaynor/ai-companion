@@ -142,9 +142,14 @@ def prepare_for_mongo(data):
     return data
 
 def parse_from_mongo(item):
-    """Convert ISO strings back to datetime objects from MongoDB"""
-    if isinstance(item, dict):
-        parsed = {k: parse_from_mongo(v) for k, v in item.items()}
+    """Convert ISO strings back to datetime objects from MongoDB and handle ObjectIds"""
+    from bson import ObjectId
+    
+    if isinstance(item, ObjectId):
+        return str(item)
+    elif isinstance(item, dict):
+        # Remove MongoDB's _id field if present, as it causes serialization issues
+        parsed = {k: parse_from_mongo(v) for k, v in item.items() if k != '_id'}
         # Convert timestamp fields
         for field in ['created_at', 'due_date', 'timestamp']:
             if field in parsed and isinstance(parsed[field], str):
