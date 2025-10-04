@@ -255,47 +255,69 @@ const PersonalityQuiz = ({ onComplete }) => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 p-4 flex items-center justify-center">
-      <div className="w-full max-w-2xl max-h-[90vh] flex flex-col">
-        <Card className="shadow-lg border-0 bg-white/90 backdrop-blur-sm flex flex-col h-full">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 p-4 pb-20 flex items-center justify-center relative z-50">
+      <div className="w-full max-w-2xl max-h-[85vh] flex flex-col">
+        <Card className="shadow-lg border-0 bg-white/95 backdrop-blur-sm flex flex-col h-full relative z-50">
           <CardHeader className="text-center flex-shrink-0">
             <CardTitle className="text-2xl font-bold text-blue-600">Let's Get to Know You</CardTitle>
             <CardDescription>
               Answer these questions to help your AI companion adapt to your personality
             </CardDescription>
           </CardHeader>
-          <ScrollArea className="flex-1 px-6">
-            <CardContent className="space-y-6 pb-6">
-              {questions.map((question) => (
-                <div key={question.id} className="space-y-3">
-                  <h3 className="font-medium text-gray-900">{question.question}</h3>
-                  <div className="grid grid-cols-1 gap-2">
+          <div className="flex-1 overflow-y-auto px-6">
+            <div className="space-y-6 pb-6">
+              {questions.map((question, questionIndex) => (
+                <div key={question.id} className="space-y-3 bg-white/50 p-4 rounded-lg">
+                  <h3 className="font-medium text-gray-900 text-lg">
+                    {questionIndex + 1}. {question.question}
+                  </h3>
+                  <div className="grid grid-cols-1 gap-3">
                     {question.options.map((option, index) => (
-                      <label key={index} className="flex items-center space-x-3 p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 cursor-pointer transition-colors">
+                      <label 
+                        key={index} 
+                        className={`flex items-center space-x-3 p-4 rounded-lg border-2 cursor-pointer transition-all hover:shadow-sm ${
+                          answers[question.id] === option 
+                            ? 'border-blue-500 bg-blue-50 shadow-sm' 
+                            : 'border-gray-200 hover:border-blue-300 bg-white'
+                        }`}
+                      >
                         <input
                           type="radio"
                           name={question.id}
                           value={option}
                           checked={answers[question.id] === option}
                           onChange={(e) => setAnswers({ ...answers, [question.id]: e.target.value })}
-                          className="text-blue-600"
+                          className="text-blue-600 focus:ring-blue-500 w-4 h-4"
                         />
-                        <span className="text-gray-700">{option}</span>
+                        <span className="text-gray-700 flex-1">{option}</span>
+                        {answers[question.id] === option && (
+                          <div className="text-blue-500 text-sm font-medium">✓</div>
+                        )}
                       </label>
                     ))}
                   </div>
                 </div>
               ))}
-            </CardContent>
-          </ScrollArea>
-          <div className="flex-shrink-0 p-6 pt-0">
+              {/* Extra bottom padding to ensure content is not hidden behind watermark */}
+              <div className="h-16"></div>
+            </div>
+          </div>
+          <div className="flex-shrink-0 p-6 pt-4 bg-white border-t">
+            <div className="text-center mb-3">
+              <span className="text-sm text-gray-500">
+                Progress: {Object.keys(answers).length} of {questions.length} questions answered
+              </span>
+            </div>
             <Button
               data-testid="submit-quiz-btn"
               onClick={handleSubmit}
               disabled={Object.keys(answers).length !== questions.length}
-              className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
+              className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 py-3"
             >
-              Complete Setup ({Object.keys(answers).length}/{questions.length})
+              {Object.keys(answers).length === questions.length 
+                ? 'Complete Setup ✨' 
+                : `Continue (${Object.keys(answers).length}/${questions.length})`
+              }
             </Button>
           </div>
         </Card>
