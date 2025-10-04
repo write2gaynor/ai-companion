@@ -432,6 +432,9 @@ const ChatInterface = () => {
 
       setMessages(prev => [...prev, aiMessage]);
       setSessionId(response.data.session_id);
+      
+      // Save session ID to localStorage for persistence
+      localStorage.setItem(`chat_session_${user.id}`, response.data.session_id);
 
       // Show suggested tasks if any
       if (response.data.suggested_tasks?.length > 0) {
