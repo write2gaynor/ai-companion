@@ -353,18 +353,55 @@ const ChatInterface = () => {
   const [inputMessage, setInputMessage] = useState('');
   const [sessionId, setSessionId] = useState(null);
   const [isTyping, setIsTyping] = useState(false);
+  const [isLoadingHistory, setIsLoadingHistory] = useState(true);
   const { user } = useAuth();
 
   useEffect(() => {
-    // Initialize with a welcome message
+    if (user) {
+      loadChatHistory();
+    }
+  }, [user]);
+
+  const loadChatHistory = async () => {
+    try {
+      setIsLoadingHistory(true);
+      
+      // Try to get existing session from localStorage
+      const storedSessionId = localStorage.getItem(`chat_session_${user.id}`);
+      
+      if (storedSessionId) {
+        // Load existing chat history
+        const response = await axios.get(`${API}/chat/history/${storedSessionId}`);
+        if (response.data.messages && response.data.messages.length > 0) {
+          setMessages(response.data.messages);
+          setSessionId(storedSessionId);
+        } else {
+          // No messages in this session, start fresh
+          initializeNewChat();
+        }
+      } else {
+        // No existing session, start fresh
+        initializeNewChat();
+      }
+    } catch (error) {
+      console.error('Failed to load chat history:', error);
+      // If loading fails, start fresh
+      initializeNewChat();
+    } finally {
+      setIsLoadingHistory(false);
+    }
+  };
+
+  const initializeNewChat = () => {
     const welcomeMessage = {
-      id: 'welcome',
+      id: 'welcome_' + Date.now(),
       content: `Hello ${user?.username}! I'm your AI companion. I'm here to chat, help you manage tasks, and provide life guidance. How are you feeling today?`,
       is_ai: true,
       timestamp: new Date().toISOString()
     };
     setMessages([welcomeMessage]);
-  }, [user]);
+    setSessionId(null);
+  };
 
   const sendMessage = async () => {
     if (!inputMessage.trim()) return;
