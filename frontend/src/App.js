@@ -744,12 +744,14 @@ const ProfileSection = () => {
 
       {showQuiz && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <PersonalityQuiz onComplete={() => {
-              setShowQuiz(false);
-              window.location.reload(); // Refresh to show updated profile
-            }} />
-            <div className="p-4 border-t">
+          <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] flex flex-col">
+            <div className="flex-1 overflow-hidden">
+              <PersonalityQuiz onComplete={() => {
+                setShowQuiz(false);
+                window.location.reload(); // Refresh to show updated profile
+              }} />
+            </div>
+            <div className="p-4 border-t flex-shrink-0">
               <Button
                 variant="outline"
                 onClick={() => setShowQuiz(false)}
