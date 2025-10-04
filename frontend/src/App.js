@@ -255,45 +255,49 @@ const PersonalityQuiz = ({ onComplete }) => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 p-4">
-      <div className="max-w-2xl mx-auto">
-        <Card className="shadow-lg border-0 bg-white/90 backdrop-blur-sm">
-          <CardHeader className="text-center">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 p-4 flex items-center justify-center">
+      <div className="w-full max-w-2xl max-h-[90vh] flex flex-col">
+        <Card className="shadow-lg border-0 bg-white/90 backdrop-blur-sm flex flex-col h-full">
+          <CardHeader className="text-center flex-shrink-0">
             <CardTitle className="text-2xl font-bold text-blue-600">Let's Get to Know You</CardTitle>
             <CardDescription>
               Answer these questions to help your AI companion adapt to your personality
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
-            {questions.map((question) => (
-              <div key={question.id} className="space-y-3">
-                <h3 className="font-medium text-gray-900">{question.question}</h3>
-                <div className="grid grid-cols-1 gap-2">
-                  {question.options.map((option, index) => (
-                    <label key={index} className="flex items-center space-x-3 p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 cursor-pointer transition-colors">
-                      <input
-                        type="radio"
-                        name={question.id}
-                        value={option}
-                        checked={answers[question.id] === option}
-                        onChange={(e) => setAnswers({ ...answers, [question.id]: e.target.value })}
-                        className="text-blue-600"
-                      />
-                      <span className="text-gray-700">{option}</span>
-                    </label>
-                  ))}
+          <ScrollArea className="flex-1 px-6">
+            <CardContent className="space-y-6 pb-6">
+              {questions.map((question) => (
+                <div key={question.id} className="space-y-3">
+                  <h3 className="font-medium text-gray-900">{question.question}</h3>
+                  <div className="grid grid-cols-1 gap-2">
+                    {question.options.map((option, index) => (
+                      <label key={index} className="flex items-center space-x-3 p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 cursor-pointer transition-colors">
+                        <input
+                          type="radio"
+                          name={question.id}
+                          value={option}
+                          checked={answers[question.id] === option}
+                          onChange={(e) => setAnswers({ ...answers, [question.id]: e.target.value })}
+                          className="text-blue-600"
+                        />
+                        <span className="text-gray-700">{option}</span>
+                      </label>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </CardContent>
+          </ScrollArea>
+          <div className="flex-shrink-0 p-6 pt-0">
             <Button
               data-testid="submit-quiz-btn"
               onClick={handleSubmit}
               disabled={Object.keys(answers).length !== questions.length}
-              className="w-full mt-6 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
+              className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
             >
-              Complete Setup
+              Complete Setup ({Object.keys(answers).length}/{questions.length})
             </Button>
-          </CardContent>
+          </div>
         </Card>
       </div>
     </div>
