@@ -75,6 +75,7 @@ async function initWhatsApp() {
                 console.log('WhatsApp connected successfully')
                 connectionState = 'connected'
                 qrCode = null
+                qrCodeImage = null
                 
                 // Send welcome message to confirm connection
                 console.log('WhatsApp Bot is ready for AI Companion integration!')
