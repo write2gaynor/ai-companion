@@ -16,6 +16,7 @@ const PORT = process.env.PORT || 3001
 
 let sock = null
 let qrCode = null
+let qrCodeImage = null
 let connectionState = 'disconnected'
 
 // Ensure auth directory exists
