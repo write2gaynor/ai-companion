@@ -894,6 +894,7 @@ const ProfileSection = () => {
         <div className="p-4 bg-blue-50 border border-blue-200 rounded">
           <p className="text-blue-800">Testing component loading...</p>
         </div>
+        <WhatsAppSetupSimple />
         <WhatsAppSetup />
         <div className="p-4 bg-green-50 border border-green-200 rounded">
           <p className="text-green-800">Component should be above this line</p>
