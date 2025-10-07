@@ -145,6 +145,13 @@ const WhatsAppSetup = () => {
         </CardContent>
       </Card>
 
+      {/* Debug: Force show QR section */}
+      {qrCode && (
+        <div className="p-4 bg-yellow-100 border border-yellow-400 rounded">
+          <p className="text-sm text-yellow-800">DEBUG: QR Code should show here. Connected: {whatsappStatus.connected.toString()}, QR exists: {!!qrCode}</p>
+        </div>
+      )}
+
       {/* QR Code Section */}
       {!whatsappStatus.connected && qrCode && (
         <Card>
