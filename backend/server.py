@@ -110,6 +110,36 @@ class ChatResponse(BaseModel):
     session_id: str
     suggested_tasks: List[str] = Field(default_factory=list)
 
+# WhatsApp Models
+class WhatsAppMessage(BaseModel):
+    phone_number: str
+    message: str
+    message_id: str
+    timestamp: int
+
+class WhatsAppResponse(BaseModel):
+    reply: Optional[str] = None
+    success: bool = True
+
+class WelfareCheckSettings(BaseModel):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    user_id: str
+    phone_number: str
+    enabled: bool = True
+    daily_morning_message: bool = True
+    morning_time: str = "09:00"  # HH:MM format
+    welfare_check_days: int = 3  # Days of inactivity before welfare check
+    custom_morning_message: Optional[str] = None
+    last_activity: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    last_welfare_check: Optional[datetime] = None
+
+class WelfareCheckCreate(BaseModel):
+    phone_number: str
+    daily_morning_message: bool = True
+    morning_time: str = "09:00"
+    welfare_check_days: int = 3
+    custom_morning_message: Optional[str] = None
+
 # Helper Functions
 def hash_password(password: str) -> str:
     return hashlib.sha256(password.encode()).hexdigest()
