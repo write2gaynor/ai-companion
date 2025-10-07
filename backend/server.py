@@ -498,6 +498,190 @@ async def get_profile(user_id: str = Depends(get_current_user_id)):
     user_doc = parse_from_mongo(user_doc)
     return User(**{k: v for k, v in user_doc.items() if k != "password_hash"})
 
+# WhatsApp Integration Routes
+@api_router.post("/whatsapp/process", response_model=WhatsAppResponse)
+async def process_whatsapp_message(message_data: WhatsAppMessage):
+    """Process incoming WhatsApp messages from the WhatsApp service"""
+    try:
+        phone_number = message_data.phone_number
+        message_text = message_data.message.strip()
+
+        # Find user by phone number
+        user_doc = await db.users.find_one({"phone_number": phone_number})
+        
+        if not user_doc:
+            # Create new user or return onboarding message
+            return WhatsAppResponse(
+                reply=f"👋 Hello! I'm your AI Companion. To get started, please register at {os.environ.get('FRONTEND_URL', 'our app')} and add your phone number to your profile. Then I can help you with tasks, reminders, and be your personal assistant!"
+            )
+        
+        user_doc = parse_from_mongo(user_doc)
+        
+        # Update last activity for welfare check
+        await db.welfare_settings.update_one(
+            {"phone_number": phone_number},
+            {"$set": {"last_activity": datetime.now(timezone.utc)}},
+            upsert=True
+        )
+        
+        # Process message with AI companion
+        ai_response = await process_whatsapp_with_ai(user_doc, message_text)
+        
+        return WhatsAppResponse(reply=ai_response)
+        
+    except Exception as e:
+        logging.error(f"Error processing WhatsApp message: {e}")
+        return WhatsAppResponse(
+            reply="Sorry, I encountered an error processing your message. Please try again! 🤖",
+            success=False
+        )
+
+async def process_whatsapp_with_ai(user_doc: dict, message_text: str) -> str:
+    """Process WhatsApp message through AI companion"""
+    try:
+        personality_profile = user_doc.get("personality_profile", {})
+        
+        # Build WhatsApp-specific system prompt
+        whatsapp_prompt = f"""
+You are the user's AI companion communicating via WhatsApp. Keep responses:
+- Concise and mobile-friendly (max 2-3 sentences usually)
+- Warm and personal based on their personality
+- Use appropriate emojis sparingly
+- If they mention tasks, offer to help manage them
+
+User's personality: {personality_profile}
+
+Be helpful, supportive, and remember you're their personal AI friend. If they ask about tasks or reminders, let them know you can help manage those too.
+"""
+        
+        # Get or create session for this user
+        session_id = f"whatsapp_{user_doc['id']}"
+        
+        # Initialize Claude chat
+        chat = LlmChat(
+            api_key=EMERGENT_LLM_KEY,
+            session_id=session_id,
+            system_message=whatsapp_prompt
+        ).with_model("anthropic", "claude-4-sonnet-20250514")
+        
+        # Send message to Claude
+        user_msg = UserMessage(text=message_text)
+        ai_response = await chat.send_message(user_msg)
+        
+        # Save the conversation to chat_messages
+        # User message
+        user_message = ChatMessage(
+            user_id=user_doc['id'],
+            content=message_text,
+            is_ai=False,
+            session_id=session_id
+        )
+        user_msg_dict = prepare_for_mongo(user_message.dict())
+        await db.chat_messages.insert_one(user_msg_dict)
+        
+        # AI response
+        ai_message = ChatMessage(
+            user_id=user_doc['id'],
+            content=ai_response,
+            is_ai=True,
+            session_id=session_id
+        )
+        ai_msg_dict = prepare_for_mongo(ai_message.dict())
+        await db.chat_messages.insert_one(ai_msg_dict)
+        
+        return ai_response
+        
+    except Exception as e:
+        logging.error(f"Error in AI processing for WhatsApp: {e}")
+        return "I'm having trouble thinking right now, but I'm here for you! Try asking me again in a moment. 💙"
+
+@api_router.post("/whatsapp/setup")
+async def setup_whatsapp_integration(
+    settings: WelfareCheckCreate, 
+    user_id: str = Depends(get_current_user_id)
+):
+    """Set up WhatsApp integration and welfare check settings"""
+    
+    # Update user with phone number
+    await db.users.update_one(
+        {"id": user_id},
+        {"$set": {"phone_number": settings.phone_number}}
+    )
+    
+    # Create or update welfare check settings
+    welfare_settings = WelfareCheckSettings(
+        user_id=user_id,
+        **settings.dict()
+    )
+    
+    settings_dict = prepare_for_mongo(welfare_settings.dict())
+    await db.welfare_settings.update_one(
+        {"user_id": user_id},
+        {"$set": settings_dict},
+        upsert=True
+    )
+    
+    return {"message": "WhatsApp integration set up successfully!"}
+
+@api_router.get("/whatsapp/status")
+async def get_whatsapp_status():
+    """Get WhatsApp service status"""
+    try:
+        async with httpx.AsyncClient() as client:
+            response = await client.get(f"{WHATSAPP_SERVICE_URL}/status", timeout=5.0)
+            return response.json()
+    except Exception as e:
+        return {"connected": False, "error": str(e)}
+
+@api_router.get("/whatsapp/qr")
+async def get_whatsapp_qr():
+    """Get QR code for WhatsApp authentication"""
+    try:
+        async with httpx.AsyncClient() as client:
+            response = await client.get(f"{WHATSAPP_SERVICE_URL}/qr", timeout=5.0)
+            return response.json()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to get QR code: {str(e)}")
+
+@api_router.post("/whatsapp/send-welfare-check")
+async def send_welfare_check(user_id: str = Depends(get_current_user_id)):
+    """Manually trigger welfare check for testing"""
+    user_doc = await db.users.find_one({"id": user_id})
+    if not user_doc or not user_doc.get("phone_number"):
+        raise HTTPException(status_code=404, detail="User not found or no phone number")
+    
+    welfare_message = f"Hey {user_doc['username']}! 🌟 Just checking in on you. How are you doing today? Remember, I'm here if you need to talk or need help with anything!"
+    
+    success = await send_whatsapp_message(user_doc["phone_number"], welfare_message, "welfare_check")
+    
+    if success:
+        # Update last welfare check time
+        await db.welfare_settings.update_one(
+            {"user_id": user_id},
+            {"$set": {"last_welfare_check": datetime.now(timezone.utc)}}
+        )
+        return {"message": "Welfare check sent successfully"}
+    else:
+        raise HTTPException(status_code=500, detail="Failed to send welfare check")
+
+async def send_whatsapp_message(phone_number: str, message: str, message_type: str = "general") -> bool:
+    """Helper function to send WhatsApp messages"""
+    try:
+        async with httpx.AsyncClient() as client:
+            response = await client.post(
+                f"{WHATSAPP_SERVICE_URL}/schedule",
+                json={
+                    "phone_number": phone_number,
+                    "message": message,
+                    "type": message_type
+                },
+                timeout=10.0
+            )
+            return response.json().get("success", False)
+    except Exception as e:
+        logging.error(f"Failed to send WhatsApp message: {e}")
+        return False
+
 # Health check
 @api_router.get("/health")
 async def health_check():
