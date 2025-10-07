@@ -889,15 +889,19 @@ const ProfileSection = () => {
       <Separator className="my-6" />
 
       {/* WhatsApp Integration */}
-      <div className="space-y-4">
-        <h4 className="font-medium text-gray-900">WhatsApp Integration</h4>
-        <div className="p-4 bg-blue-50 border border-blue-200 rounded">
-          <p className="text-blue-800">Testing component loading...</p>
+      <div className="space-y-4 mb-20">
+        <h4 className="font-medium text-gray-900 text-2xl bg-yellow-200 p-4 rounded">WhatsApp Integration (TESTING)</h4>
+        <div className="p-8 bg-red-100 border-4 border-red-400 rounded">
+          <p className="text-red-800 text-xl font-bold">RED BOX - If you see this, components should show below</p>
         </div>
-        <WhatsAppSetupSimple />
-        <WhatsAppSetup />
-        <div className="p-4 bg-green-50 border border-green-200 rounded">
-          <p className="text-green-800">Component should be above this line</p>
+        <div className="p-8 bg-blue-100 border-4 border-blue-400 rounded">
+          <WhatsAppSetupSimple />
+        </div>
+        <div className="p-8 bg-green-100 border-4 border-green-400 rounded">
+          <WhatsAppSetup />
+        </div>
+        <div className="p-8 bg-purple-100 border-4 border-purple-400 rounded">
+          <p className="text-purple-800 text-xl font-bold">PURPLE BOX - End of WhatsApp section</p>
         </div>
       </div>
     </div>
