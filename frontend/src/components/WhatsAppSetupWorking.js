@@ -113,20 +113,43 @@ const WhatsAppSetupWorking = () => {
       )}
 
       {/* Phone Setup Section */}
-      {status.connected && (
+      {status.connected && !setupComplete && (
         <div className="bg-green-50 p-4 rounded-lg border border-green-200">
           <h4 className="font-medium text-green-800 mb-2">🎉 WhatsApp Connected!</h4>
-          <p className="text-green-700">You can now set up your phone number and preferences.</p>
+          <p className="text-green-700">Now enter your phone number to complete the setup.</p>
           <div className="mt-4">
             <input
               type="text"
               placeholder="Your phone number (+1234567890)"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
             />
-            <button className="mt-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
-              Complete Setup
+            <button 
+              onClick={handleCompleteSetup}
+              disabled={isSettingUp || !phoneNumber.trim()}
+              className={`mt-2 px-4 py-2 rounded-lg font-medium ${
+                isSettingUp || !phoneNumber.trim()
+                  ? 'bg-gray-400 text-gray-200 cursor-not-allowed'
+                  : 'bg-green-600 text-white hover:bg-green-700 cursor-pointer'
+              }`}
+            >
+              {isSettingUp ? 'Setting up...' : 'Complete Setup'}
             </button>
           </div>
+        </div>
+      )}
+
+      {/* Setup Complete */}
+      {setupComplete && (
+        <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+          <h4 className="font-medium text-blue-800 mb-2">✅ Setup Complete!</h4>
+          <p className="text-blue-700">Your AI companion is now connected to WhatsApp ({phoneNumber}).</p>
+          <p className="text-blue-600 text-sm mt-2">
+            • Daily good morning messages at 9:00 AM<br/>
+            • Welfare check after 3 days of inactivity<br/>
+            • You can now chat with your AI companion via WhatsApp!
+          </p>
         </div>
       )}
 
