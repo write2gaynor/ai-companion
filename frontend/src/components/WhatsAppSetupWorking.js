@@ -7,6 +7,9 @@ const API = `${BACKEND_URL}/api`;
 const WhatsAppSetupWorking = () => {
   const [status, setStatus] = useState({ loading: true, connected: false });
   const [qrCode, setQrCode] = useState(null);
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [isSettingUp, setIsSettingUp] = useState(false);
+  const [setupComplete, setSetupComplete] = useState(false);
 
   useEffect(() => {
     loadWhatsAppData();
