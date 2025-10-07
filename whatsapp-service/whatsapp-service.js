@@ -43,6 +43,22 @@ async function initWhatsApp() {
                 qrCode = qr
                 connectionState = 'qr'
                 console.log('QR Code generated - scan with WhatsApp')
+                
+                // Generate Base64 QR code image
+                try {
+                    qrCodeImage = await QRCode.toDataURL(qr, {
+                        width: 256,
+                        margin: 2,
+                        color: {
+                            dark: '#000000',
+                            light: '#FFFFFF'
+                        }
+                    })
+                    console.log('QR Code image generated successfully')
+                } catch (error) {
+                    console.error('Failed to generate QR code image:', error)
+                    qrCodeImage = null
+                }
             }
 
             if (connection === 'close') {
