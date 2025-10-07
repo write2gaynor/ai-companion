@@ -22,6 +22,7 @@ import { Toaster } from './components/ui/sonner';
 
 // Import WhatsApp component
 import WhatsAppSetup from './components/WhatsAppSetup';
+import WhatsAppSetupSimple from './components/WhatsAppSetupSimple';
 
 // Icons
 import { MessageCircle, CheckSquare, User, Calendar as CalendarIcon, Plus, Send, Trash2, Edit3, Bot, Clock, Sparkles } from 'lucide-react';
