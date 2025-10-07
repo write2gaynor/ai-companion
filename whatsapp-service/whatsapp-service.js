@@ -115,7 +115,14 @@ async function initWhatsApp() {
     } catch (error) {
         console.error('WhatsApp initialization error:', error)
         connectionState = 'error'
-        setTimeout(initWhatsApp, 10000)
+        qrCode = null
+        qrCodeImage = null
+        
+        // Retry with exponential backoff
+        setTimeout(() => {
+            console.log('Retrying WhatsApp initialization...')
+            initWhatsApp()
+        }, 15000)
     }
 }
 
