@@ -146,9 +146,12 @@ const WhatsAppSetup = () => {
           <CardContent className="text-center">
             <div className="bg-white p-4 rounded-lg inline-block border-2 border-gray-200">
               <img 
-                src={`data:image/png;base64,${qrCode}`} 
+                src={qrCode} 
                 alt="WhatsApp QR Code"
                 className="w-48 h-48"
+                onError={(e) => {
+                  console.error('QR Code image failed to load:', e)
+                }}
               />
             </div>
             <div className="mt-4 text-sm text-gray-600 space-y-2">
