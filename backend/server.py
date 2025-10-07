@@ -32,6 +32,9 @@ JWT_EXPIRATION = timedelta(days=7)
 # LLM configuration
 EMERGENT_LLM_KEY = os.environ.get('EMERGENT_LLM_KEY')
 
+# WhatsApp service configuration
+WHATSAPP_SERVICE_URL = os.environ.get('WHATSAPP_SERVICE_URL', 'http://localhost:3001')
+
 # Create the main app
 app = FastAPI()
 api_router = APIRouter(prefix="/api")
