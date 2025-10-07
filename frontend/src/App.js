@@ -890,7 +890,7 @@ const ProfileSection = () => {
       {/* WhatsApp Integration */}
       <div className="space-y-4 mb-8">
         <h4 className="font-medium text-gray-900">WhatsApp Integration</h4>
-        <WhatsAppSetup />
+        <WhatsAppSetupWorking />
       </div>
     </div>
   );
