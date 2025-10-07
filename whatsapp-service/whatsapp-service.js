@@ -62,15 +62,30 @@ async function initWhatsApp() {
             }
 
             if (connection === 'close') {
-                const shouldReconnect = (lastDisconnect?.error)?.output?.statusCode !== DisconnectReason.loggedOut
-                console.log('Connection closed due to ', lastDisconnect?.error, ', reconnecting ', shouldReconnect)
+                const statusCode = lastDisconnect?.error?.output?.statusCode
+                const shouldReconnect = statusCode !== DisconnectReason.loggedOut
+                
+                console.log('Connection closed:', {
+                    reason: lastDisconnect?.error?.output?.payload?.message || 'Unknown',
+                    statusCode,
+                    shouldReconnect
+                })
                 
                 connectionState = 'disconnected'
                 qrCode = null
                 qrCodeImage = null
 
                 if (shouldReconnect) {
-                    setTimeout(initWhatsApp, 5000)
+                    // Add exponential backoff for reconnection
+                    const delay = statusCode === 408 ? 15000 : 5000 // Longer delay for QR timeout
+                    console.log(`Reconnecting in ${delay/1000} seconds...`)
+                    setTimeout(() => {
+                        try {
+                            initWhatsApp()
+                        } catch (error) {
+                            console.error('Reconnection failed:', error)
+                        }
+                    }, delay)
                 }
             } else if (connection === 'open') {
                 console.log('WhatsApp connected successfully')
@@ -78,8 +93,10 @@ async function initWhatsApp() {
                 qrCode = null
                 qrCodeImage = null
                 
-                // Send welcome message to confirm connection
                 console.log('WhatsApp Bot is ready for AI Companion integration!')
+            } else if (connection === 'connecting') {
+                console.log('Connecting to WhatsApp...')
+                connectionState = 'connecting'
             }
         })
 
