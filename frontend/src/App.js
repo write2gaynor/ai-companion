@@ -884,6 +884,14 @@ const ProfileSection = () => {
           </div>
         </div>
       )}
+
+      <Separator className="my-6" />
+
+      {/* WhatsApp Integration */}
+      <div className="space-y-4">
+        <h4 className="font-medium text-gray-900">WhatsApp Integration</h4>
+        <WhatsAppSetup />
+      </div>
     </div>
   );
 };
