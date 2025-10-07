@@ -40,6 +40,36 @@ const WhatsAppSetupWorking = () => {
     }
   };
 
+  const handleCompleteSetup = async () => {
+    if (!phoneNumber.trim()) {
+      alert('Please enter your phone number');
+      return;
+    }
+
+    setIsSettingUp(true);
+    try {
+      console.log('Setting up WhatsApp with phone number:', phoneNumber);
+      
+      const response = await axios.post(`${API}/whatsapp/setup`, {
+        phone_number: phoneNumber,
+        daily_morning_message: true,
+        morning_time: '09:00',
+        welfare_check_days: 3,
+        custom_morning_message: 'Good morning! Hope you have a wonderful day ahead! 🌅'
+      });
+      
+      console.log('Setup response:', response.data);
+      setSetupComplete(true);
+      alert('WhatsApp integration completed successfully! 🎉');
+      
+    } catch (error) {
+      console.error('Setup error:', error);
+      alert('Failed to complete setup: ' + (error.response?.data?.detail || error.message));
+    } finally {
+      setIsSettingUp(false);
+    }
+  };
+
   return (
     <div className="space-y-6 bg-blue-50 p-6 rounded-lg">
       <h3 className="text-lg font-semibold text-blue-800">WhatsApp Integration (Working Version)</h3>
