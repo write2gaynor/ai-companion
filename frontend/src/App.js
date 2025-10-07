@@ -890,7 +890,13 @@ const ProfileSection = () => {
       {/* WhatsApp Integration */}
       <div className="space-y-4">
         <h4 className="font-medium text-gray-900">WhatsApp Integration</h4>
+        <div className="p-4 bg-blue-50 border border-blue-200 rounded">
+          <p className="text-blue-800">Testing component loading...</p>
+        </div>
         <WhatsAppSetup />
+        <div className="p-4 bg-green-50 border border-green-200 rounded">
+          <p className="text-green-800">Component should be above this line</p>
+        </div>
       </div>
     </div>
   );
