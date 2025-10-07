@@ -162,7 +162,8 @@ app.get('/health', (req, res) => {
 
 app.get('/qr', (req, res) => {
     res.json({ 
-        qr: qrCode,
+        qr: qrCodeImage, // Send the Base64 image instead of raw QR string
+        qr_raw: qrCode,   // Keep raw QR for debugging
         connection_state: connectionState 
     })
 })
