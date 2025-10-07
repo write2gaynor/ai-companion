@@ -67,6 +67,7 @@ async function initWhatsApp() {
                 
                 connectionState = 'disconnected'
                 qrCode = null
+                qrCodeImage = null
 
                 if (shouldReconnect) {
                     setTimeout(initWhatsApp, 5000)
