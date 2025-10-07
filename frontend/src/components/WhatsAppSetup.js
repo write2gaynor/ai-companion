@@ -147,7 +147,7 @@ const WhatsAppSetup = () => {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center space-x-2">
-              <QrCode className="w-6 h-6" />
+              <div className="w-6 h-6 border-2 border-gray-400"></div>
               <span>Connect WhatsApp</span>
             </CardTitle>
             <CardDescription>
