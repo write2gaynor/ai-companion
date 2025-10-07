@@ -102,13 +102,10 @@ const WhatsAppSetup = () => {
     return digits.length > 0 ? '+' + digits : '';
   };
 
-  // Debug logging
-  console.log('WhatsApp Component Render State:', {
+  // Debug logging for troubleshooting
+  console.log('WhatsApp Status:', {
     connected: whatsappStatus.connected,
-    loading: whatsappStatus.loading,
-    qrCodeExists: !!qrCode,
-    qrCodeLength: qrCode ? qrCode.length : 0,
-    connectionState: whatsappStatus.connection_state
+    qrAvailable: !!qrCode
   });
 
   return (
