@@ -102,6 +102,15 @@ const WhatsAppSetup = () => {
     return digits.length > 0 ? '+' + digits : '';
   };
 
+  // Debug logging
+  console.log('WhatsApp Component Render State:', {
+    connected: whatsappStatus.connected,
+    loading: whatsappStatus.loading,
+    qrCodeExists: !!qrCode,
+    qrCodeLength: qrCode ? qrCode.length : 0,
+    connectionState: whatsappStatus.connection_state
+  });
+
   return (
     <div className="space-y-6">
       {/* WhatsApp Service Status */}
