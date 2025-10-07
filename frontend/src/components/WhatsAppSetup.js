@@ -34,8 +34,12 @@ const WhatsAppSetup = () => {
 
   const checkWhatsAppStatus = async () => {
     try {
+      console.log('Checking WhatsApp status...');
       const statusResponse = await axios.get(`${API}/whatsapp/status`);
+      console.log('Status response:', statusResponse.data);
+      
       const qrResponse = await axios.get(`${API}/whatsapp/qr`);
+      console.log('QR response:', qrResponse.data);
       
       setWhatsappStatus({
         ...statusResponse.data,
@@ -43,6 +47,7 @@ const WhatsAppSetup = () => {
       });
       
       setQrCode(qrResponse.data.qr);
+      console.log('QR Code set:', qrResponse.data.qr ? 'Available' : 'Not available');
     } catch (error) {
       console.error('Failed to check WhatsApp status:', error);
       setWhatsappStatus({
