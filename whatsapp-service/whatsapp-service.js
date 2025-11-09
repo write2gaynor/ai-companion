@@ -11,7 +11,7 @@ app.use(cors())
 app.use(express.json())
 
 // Configuration
-const FASTAPI_URL = process.env.FASTAPI_URL || 'https://adapt-friend.preview.emergentagent.com'
+const FASTAPI_URL = process.env.FASTAPI_URL || 'http://localhost:8001'
 const PORT = process.env.PORT || 3001
 
 let sock = null
