@@ -1,0 +1,8 @@
+WhatsApp AI Companion service running on port 3001
+Initializing WhatsApp connection...
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+{"level":30,"time":"2025-10-07T02:50:31.200Z","pid":750,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"VxJVGswEV1l2caEgmk+mZG8/3Q4LHGyfiWCc8F3/TVk="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-10-07T02:50:31.360Z","pid":750,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAAGg==","eKeytype":"BQ==","eIdent":"tsFPC/hHip0cPORWPOo1T85vWFZGz+zVwBWOa+xsmGk=","eSkeyId":"AAAB","eSkeyVal":"1k0fzicXNCFXdQ2113G3zfMJl00BE8y7TZTxURoNMys=","eSkeySig":"TBQzv/unsynJPnLoYshhkxLDAnyGSfnnFz6opjtoiEBQJHOsyRr94BatzA7qYMC6choU2bcc0Tm9o0zKgzpbgg==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgxBSSBDb21wYW5pb24YASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code generated - scan with WhatsApp
+QR Code generated - scan with WhatsApp
+QR Code generated - scan with WhatsApp

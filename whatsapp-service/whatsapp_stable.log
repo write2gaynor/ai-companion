@@ -1,0 +1,109 @@
+WhatsApp AI Companion service running on port 3001
+Initializing WhatsApp connection...
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+Connecting to WhatsApp...
+{"level":30,"time":"2025-10-07T15:55:09.792Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"IfGn6fyNkcNXOtI88aFEcc29bctdyepaGCeuPQE8qSU="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-10-07T15:55:09.844Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAAZw==","eKeytype":"BQ==","eIdent":"0uRnXk/2wWHw6xMTfPnF6hhmOdDKTctPmL7iHxDB8Rc=","eSkeyId":"AAAB","eSkeyVal":"2umebHXPDFTMcaBz4DJaXavQqkXgw6brmwTlryjoIXw=","eSkeySig":"Bhin6yMqJuY0ePaTtvePF7+CyK62/8UgThvpN45vOf8jTcDCdkvyFx4PmYYojdrsFHxd4cssLUJuH/pffVfVig==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgxBSSBDb21wYW5pb24YASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+{"level":30,"time":"2025-10-07T15:57:50.120Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)\n    at listOnTimeout (node:internal/timers:581:17)\n    at process.processTimers (node:internal/timers:519:7)","msg":"connection errored"}
+Connection closed: {
+  reason: 'QR refs attempts ended',
+  statusCode: 408,
+  shouldReconnect: true
+}
+Reconnecting in 15 seconds...
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+Connecting to WhatsApp...
+{"level":30,"time":"2025-10-07T15:58:05.327Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"9lniJd4TbmP90IgfWjUijTHzUuVL846tpvC6ea1Kq2E="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-10-07T15:58:05.452Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAAtg==","eKeytype":"BQ==","eIdent":"qmHH2bmTec8Q1I9EZVkMi9IlPmVoxN2gcZuzyd0ZoiM=","eSkeyId":"AAAB","eSkeyVal":"No1het2VEn6+y0+uSk70UtxUEq9Umf7py2KLT8Gcej0=","eSkeySig":"2XytKTT7w+JvAJqWH8ARX0VfLqwa96a+6Yft2V3IsT5SKb95mc5dPL4XTOgsfqqYi2GX+awupzqalAO5Tq5qiw==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgxBSSBDb21wYW5pb24YASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+{"level":30,"time":"2025-10-07T16:00:45.781Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)\n    at listOnTimeout (node:internal/timers:581:17)\n    at process.processTimers (node:internal/timers:519:7)","msg":"connection errored"}
+Connection closed: {
+  reason: 'QR refs attempts ended',
+  statusCode: 408,
+  shouldReconnect: true
+}
+Reconnecting in 15 seconds...
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+Connecting to WhatsApp...
+{"level":30,"time":"2025-10-07T16:01:00.929Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"+8KId4FegfqFboY8xlmgxkltPY29ImjkKjBsgZM86SE="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-10-07T16:01:00.989Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAAJQ==","eKeytype":"BQ==","eIdent":"/Z+afAuX7vp9WseE3NDOHjBihZOe0vJSvPl8NE+1eEs=","eSkeyId":"AAAB","eSkeyVal":"vcKFChgqr6TzuO7eSMZkRTSTMqA9QRvUkMx49M32rTA=","eSkeySig":"kXIQypmVUyYdIYzcZHueKDGKWvAlPhjyOStQrdX4Pugp/xvhHcMfGfQ81AAf/e+96PJgoMmIwoyL6DiVWRTZCw==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgxBSSBDb21wYW5pb24YASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+{"level":30,"time":"2025-10-07T16:02:14.163Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","me":{"id":"13453265836:1@s.whatsapp.net"},"platform":"android","msg":"pairing configured successfully, expect to restart the connection..."}
+{"level":50,"time":"2025-10-07T16:02:14.819Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"tag":"stream:error","attrs":{"code":"515"}},"msg":"stream errored out"}
+Connection closed: {
+  reason: 'Stream Errored (restart required)',
+  statusCode: 515,
+  shouldReconnect: true
+}
+Reconnecting in 5 seconds...
+{"level":30,"time":"2025-10-07T16:02:14.819Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","trace":"Error: Stream Errored (restart required)\n    at WebSocketClient.<anonymous> (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:510:13)\n    at WebSocketClient.emit (node:events:524:28)\n    at file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:230:35\n    at Object.decodeFrame (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Utils/noise-handler.js:140:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","msg":"connection errored"}
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+Connecting to WhatsApp...
+{"level":30,"time":"2025-10-07T16:02:19.941Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"KgQdYzPozDSwUgftNms9LskKfYrL6KIraREYabGhVVo="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-10-07T16:02:20.004Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"username":"13453265836","passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","device":1,"pull":true},"msg":"logging in..."}
+{"level":30,"time":"2025-10-07T16:02:20.537Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","msg":"0 pre-keys found on server"}
+{"level":30,"time":"2025-10-07T16:02:20.538Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","count":30,"msg":"uploading pre-keys"}
+{"level":30,"time":"2025-10-07T16:02:20.599Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","msg":"handled 0 offline messages/notifications"}
+{"level":30,"time":"2025-10-07T16:02:20.599Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","msg":"Connection is now AwaitingInitialSync, buffering events"}
+{"level":30,"time":"2025-10-07T16:02:20.599Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","msg":"History sync is disabled by config, not waiting for notification. Transitioning to Online."}
+{"level":30,"time":"2025-10-07T16:02:20.752Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","count":30,"msg":"uploaded pre-keys"}
+{"level":30,"time":"2025-10-07T16:02:20.813Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","msg":"opened connection to WA"}
+WhatsApp connected successfully
+WhatsApp Bot is ready for AI Companion integration!
+{"level":40,"time":"2025-10-07T16:02:20.815Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","msg":"no name present, ignoring presence update request..."}
+{"level":30,"time":"2025-10-07T16:02:21.363Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","newAppStateSyncKeyId":"AAAAAKAu","newKeys":["AAAAAKAu"],"msg":"injecting new app state sync keys"}
+{"level":30,"time":"2025-10-07T16:02:21.968Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","histNotification":{"fileSha256":"K+GqmA+oTj6NiBpW0c/qy1+XJfAUennUSbP9qBPEZ9s=","fileLength":"714","mediaKey":"7mFDdQyJ1oLFhrZ3eF/iRr8t/5rbFccjwZ7y+QLN3VM=","fileEncSha256":"BbUvbVfHFL7YMFpzCkZwfu0CpQP1ReFhXkRcHxSAd10=","directPath":"/v/t62.31111-24/560998635_820668887126615_7473090774588798762_n.enc?ccb=11-4&oh=01_Q5Aa2gGcyMK304rMGwYcmmyv-oZJVfEv6-At_yiBPtkqkqWINw&oe=690CB430&_nc_sid=5e03e0","syncType":"INITIAL_STATUS_V3","encHandle":"AQIf5o2eB3AkjOaLT7FmdYpbqYJJH3IxJZsROe5TbbjWytF8MUXN9sLmQsT8wLNF9rdkudgkJBdM_k9wxY9FLoP9A0ULkIdYw2iZCniDPLCnZjy2lPVcVFrzUGs0OI204Gk"},"process":false,"id":"AC5A5F84EFB012AFA5F00FCEEA4CB937","isLatest":true,"msg":"got history notification"}
+{"level":30,"time":"2025-10-07T16:02:21.970Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","histNotification":{"fileSha256":"NxNmy97OHVTpvjaj19/Vo++VySfHtgIDK0kiyd3fjo8=","fileLength":"10","mediaKey":"m3DSCjRKm+ByM7mWtmpLU6ELWfHBvZtoq2/7nkEI9UI=","fileEncSha256":"O1tR2ULE7JUsgY8/cWCB1o7bTiYLPvNTwo8Ku1Q3K3U=","directPath":"/v/t62.31111-24/560556335_24706011922426662_7599455519978205025_n.enc?ccb=11-4&oh=01_Q5Aa2gE10-uFzHWriL59ng22AZ8ViOMgcvQ35uP5eUq6OE1vkw&oe=690C8FB6&_nc_sid=5e03e0","syncType":"NON_BLOCKING_DATA","encHandle":"AQLtZTjOHftw9g67N-i1zsq6xxoldZIYIvd7f0nV46Mb3rvAg_o77i_wXB9hCgSpyore8cIIhDDwS6RYK7us4JBo-FsyJGIsF8G3ELIXrv1HuFPNYTvlUOQVKpQzX5HD7Rg"},"process":false,"id":"AC187B1C30D3C69BA4D7568E6D3E16CD","isLatest":true,"msg":"got history notification"}
+{"level":30,"time":"2025-10-07T16:02:21.992Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","histNotification":{"fileSha256":"tlPBaDPEaDYu1AGGop734UsTem6SXjEcV2upxs9z5dk=","fileLength":"581","mediaKey":"+QrHixNRGNXOW16V+3zcwQRHqWpoHM4990aayh5CSwg=","fileEncSha256":"1n+GG0z2WSORvpycif/VJQ89TYYQmqs2JMXqSEJJ2BY=","directPath":"/v/t62.31111-24/555080963_811338755184307_7953638464377787569_n.enc?ccb=11-4&oh=01_Q5Aa2gF3h1QtS7_O8iNj30jPXAY3OBpNkv3IEh37AEp3ZW2vlw&oe=690C9720&_nc_sid=5e03e0","syncType":"PUSH_NAME","chunkOrder":1},"process":false,"id":"AC2403B678A838A2B7A9274E117B3FD3","isLatest":true,"msg":"got history notification"}
+{"level":30,"time":"2025-10-07T16:02:22.161Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","histNotification":{"fileSha256":"ikX3JLmXn+hDkqu/n3g+/f8xpUFL+9XpDFrF9PJ1HU0=","fileLength":"141957","mediaKey":"ttDExj6uwo/f6+FuAZmzcPxUStjALn+DGA/KnyMn4mA=","fileEncSha256":"wOw2RfsVIExBY74+mr61hTv8FQdcG0PrcRXd8KEKaNM=","directPath":"/v/t62.31111-24/561081174_1920201531874096_204615157644384672_n.enc?ccb=11-4&oh=01_Q5Aa2gGRhlRk-HtkTxfx35iw7AyT-PmkWOfYA2TtSkpJCiDaOg&oe=690C95A2&_nc_sid=5e03e0","syncType":"INITIAL_BOOTSTRAP","encHandle":"AQJFII6GDjp_YkNiDefimBJID_fPohvMegKdEqGe8Oc3YxIMt8O4EBIpYbQOIW1CP-_sb35Z4RBmAGtWjHGhzCiGhk1upBiIMFude4dkn22zBaVWYI0umV3mBjSg5qotIvU"},"process":false,"id":"ACD651E9E25B010B4A88ECBC3E6CCB52","isLatest":true,"msg":"got history notification"}
+{"level":30,"time":"2025-10-07T16:02:22.813Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","msg":"resyncing critical_block from v0"}
+{"level":30,"time":"2025-10-07T16:02:22.925Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","msg":"synced critical_block to v1"}
+{"level":30,"time":"2025-10-07T16:02:23.760Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","msg":"resyncing regular from v0"}
+{"level":30,"time":"2025-10-07T16:02:23.868Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","msg":"synced regular to v1"}
+{"level":30,"time":"2025-10-07T16:02:27.221Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","histNotification":{"fileSha256":"VbyX1GBWn926J+qnasSVBechvWe5TDFW/svRa4CpD9M=","fileLength":"1418562","mediaKey":"E/Y54h63kKnEDHaKrNl0d6Xzc8fRrNW0iqB1C+sOgbM=","fileEncSha256":"3bFy/lG6paawcPWuTaV5X+T4tckXAxe/+DBtJHsamkM=","directPath":"/v/t62.31111-24/561864897_782703704543469_1994569243595403785_n.enc?ccb=11-4&oh=01_Q5Aa2gGf3-IdAHAD-8MCTKbt2bV6GfBZVC-y_c7kjcx-ncVfSw&oe=690CAB1F&_nc_sid=5e03e0","syncType":"RECENT","chunkOrder":1,"progress":62,"oldestMsgInChunkTimestampSec":"1755101630","encHandle":"AQI7Z9dAO4VGouNH4UOxQ3nF1T9ZQBk1JskShTgK5TJyOyCzMKVlCT2Uj8bZbc4Wi7pXCkdGSOO64ugJM6YLnp42hub-afHiRGCFTX-v9yvUhKHiMBgzsZhlssQgSaTqef8"},"process":false,"id":"ACC373AE85A3A51E40F0B11C92604129","isLatest":true,"msg":"got history notification"}
+{"level":30,"time":"2025-10-07T16:02:29.203Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","histNotification":{"fileSha256":"Y9Z0QVhuVf7L0H3Yd80OUhcrrqYR6nF/mmo+luQ0yv8=","fileLength":"854654","mediaKey":"mU7slDgncIeLXtYsp9UejF/vE+ZIJvRZDq5NjEp2iJU=","fileEncSha256":"mxHA5zwSuXirUxNLYufisTNonPafVPcIjs0OiDd2q6k=","directPath":"/v/t62.31111-24/561398124_2037728380328212_2714403236014440505_n.enc?ccb=11-4&oh=01_Q5Aa2gHV_1mv0BklAFcaXJ84KHE78UnBtWGVlOVCFYq8ElFF0g&oe=690C9D9D&_nc_sid=5e03e0","syncType":"RECENT","chunkOrder":2,"progress":100,"oldestMsgInChunkTimestampSec":"1752096729","encHandle":"AQIbBIir9cB_BtTJFYdBhHJSyRrRwq3fmFJ965owM_9HZvuMOaACtP4-BHF2Txg_yzqRCXcGQSCC41t5owinsqOovuKfVc-jPwZ0eA8ICA9EWkNFjs_8wULym_GjF8qJkbA"},"process":false,"id":"AC1ED2101629C9F503D3C95CEC4E8020","isLatest":true,"msg":"got history notification"}
+{"level":30,"time":"2025-10-07T16:34:06.605Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","trace":"Error: Connection Terminated\n    at WebSocketClient.<anonymous> (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:445:30)\n    at WebSocketClient.emit (node:events:524:28)\n    at WebSocket.<anonymous> (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/Client/websocket.js:35:54)\n    at WebSocket.emit (node:events:524:28)\n    at WebSocket.emitClose (/app/whatsapp-service/node_modules/ws/lib/websocket.js:272:10)\n    at TLSSocket.socketOnClose (/app/whatsapp-service/node_modules/ws/lib/websocket.js:1341:15)\n    at TLSSocket.emit (node:events:536:35)\n    at node:net:343:12\n    at TCP.done (node:_tls_wrap:648:7)","msg":"connection errored"}
+Connection closed: {
+  reason: 'Connection Terminated',
+  statusCode: 428,
+  shouldReconnect: true
+}
+Reconnecting in 5 seconds...
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+Connecting to WhatsApp...
+{"level":30,"time":"2025-10-07T16:34:11.700Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"xmzxKM/aM+6UXyFZ9p0WIOJiiVRPU+mruN3SHxCPF3Y="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-10-07T16:34:11.722Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"username":"13453265836","passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","device":1,"pull":true},"msg":"logging in..."}
+{"level":30,"time":"2025-10-07T16:34:11.901Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","fromTimestamp":1759852940,"msg":"clean dirty bits account_sync"}
+{"level":30,"time":"2025-10-07T16:34:11.926Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","msg":"handled 0 offline messages/notifications"}
+{"level":30,"time":"2025-10-07T16:34:11.926Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","msg":"Connection is now AwaitingInitialSync, buffering events"}
+{"level":30,"time":"2025-10-07T16:34:11.926Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","msg":"History sync is disabled by config, not waiting for notification. Transitioning to Online."}
+{"level":30,"time":"2025-10-07T16:34:11.941Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","msg":"29 pre-keys found on server"}
+{"level":30,"time":"2025-10-07T16:34:11.960Z","pid":410,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","msg":"opened connection to WA"}
+WhatsApp connected successfully
+WhatsApp Bot is ready for AI Companion integration!

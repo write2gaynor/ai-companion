@@ -1,0 +1,374 @@
+WhatsApp AI Companion service running on port 3001
+Initializing WhatsApp connection...
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+{"level":30,"time":"2025-10-07T13:30:27.176Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"Uwqyv0L/IHIQhyFdzAC/swl6kPeMznbkYWoilp3TbS8="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-10-07T13:30:27.242Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAAIw==","eKeytype":"BQ==","eIdent":"vi8or4Mq8BBU1nCX8aevsOZ/Sv1m7x5+qUfGiNfXHWE=","eSkeyId":"AAAB","eSkeyVal":"rOyWKMQn5S+ytji4aZp5SM6qcilE1ouzVDeGq6SSQ1o=","eSkeySig":"Nz7/rF5eUHkd/wfDXIl0JukQLTRb4tp+42sZw0hMv/q7mDv/zjUVXhjGLmy+21EFKPVaqVuw7sOY1gcMBE9NDA==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgxBSSBDb21wYW5pb24YASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+{"level":30,"time":"2025-10-07T13:33:07.558Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)\n    at listOnTimeout (node:internal/timers:581:17)\n    at process.processTimers (node:internal/timers:519:7)","msg":"connection errored"}
+Connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+{"level":30,"time":"2025-10-07T13:33:12.684Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"79zdSPZ1npW/zD34GYQscTdvRTwZB0nivtS/HcZ7Xho="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-10-07T13:33:12.731Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAA6A==","eKeytype":"BQ==","eIdent":"wgC/ypzPdOv/BTvkA3ckcf+arIqKQfTHImG1hxJC7TI=","eSkeyId":"AAAB","eSkeyVal":"NjSGwD8uxDrW9+C+5oRYkkz684wwYxNu8Zg5ZGx8Xx0=","eSkeySig":"4w02BK2JdzJCRbIGfZD1oNmwfDNgjMRmE7rFdZkev5NJPCSofliLj5tsw7ffSy5pXIgHNWFY4Xsf4EkcYeQYhg==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgxBSSBDb21wYW5pb24YASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+{"level":30,"time":"2025-10-07T13:35:52.949Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)\n    at listOnTimeout (node:internal/timers:581:17)\n    at process.processTimers (node:internal/timers:519:7)","msg":"connection errored"}
+Connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+{"level":30,"time":"2025-10-07T13:35:58.068Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"E5xaoo6F6NyHOUA2fwRIV7V5M/1+QQ4wj8FkXW0mfjI="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-10-07T13:35:58.115Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAAlA==","eKeytype":"BQ==","eIdent":"ibw3WFQ3fJ+jXETndMuGHCKLvIB1vvr/uZsjsfHdpRI=","eSkeyId":"AAAB","eSkeyVal":"z19KnfVc1aguDil669+VEcATn+TYGiOLhywFE9+sdh8=","eSkeySig":"kAE/hRGzb5Y50bha36vtUwEQVnUc94SDe922GCEwCS9vy9VGzItaB6vkR4rtFu8DZZEyFrD4pGApeNb2op2MDg==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgxBSSBDb21wYW5pb24YASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+{"level":30,"time":"2025-10-07T13:38:38.351Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)\n    at listOnTimeout (node:internal/timers:581:17)\n    at process.processTimers (node:internal/timers:519:7)","msg":"connection errored"}
+Connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+{"level":30,"time":"2025-10-07T13:38:43.550Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"eoVEI0scpQ6ps92dhgJxwSl6Cltjc40k/JRJhSGizwM="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-10-07T13:38:43.888Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAAIQ==","eKeytype":"BQ==","eIdent":"6oBgA0zWKJT6RbyfLb+U6dYejs67hLlc5uT/Vv2cJgA=","eSkeyId":"AAAB","eSkeyVal":"8hQlAQbcxov9YLUr7Y8hf9kjhFpQVGE8iyGT2q3b0hI=","eSkeySig":"2/VIM92Bw+m5HE9kMD/oOpy/msgCrJXGWS+2QTUGfelUFU9g6MH/ZcbTwXPXVvSRSBmkJhaBqqZ5wHd/8zpqAg==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgxBSSBDb21wYW5pb24YASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+{"level":30,"time":"2025-10-07T13:41:24.213Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)\n    at listOnTimeout (node:internal/timers:581:17)\n    at process.processTimers (node:internal/timers:519:7)","msg":"connection errored"}
+Connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+{"level":30,"time":"2025-10-07T13:41:29.336Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"JddulsBg4na+kCAtNqBh3CxLPi3FyFVo9GXcikkDdTo="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-10-07T13:41:29.383Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAA5w==","eKeytype":"BQ==","eIdent":"e/oEKPmLoO6u/0TI1XaSDlm35iX91lrPUzD23qnNrwE=","eSkeyId":"AAAB","eSkeyVal":"K0S7FpEVanj6wlGFZZ7x37dp1buom5LJxrv7DUHf4Ss=","eSkeySig":"bOT2Cmb+JdKgRgHhSAiTP6LgBOq+3uiL/AZTR5lxYx/Nl6LOdAzYSSClxRdD7gyBxumvdYm+ZQIDepRWpfmXCA==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgxBSSBDb21wYW5pb24YASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+{"level":30,"time":"2025-10-07T13:44:09.578Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)\n    at listOnTimeout (node:internal/timers:581:17)\n    at process.processTimers (node:internal/timers:519:7)","msg":"connection errored"}
+Connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+{"level":30,"time":"2025-10-07T13:44:14.689Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"TPOp3YmEjY5wb2AZyOtC9ghszholriYeAgqqtNbTBBI="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-10-07T13:44:14.730Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAAzA==","eKeytype":"BQ==","eIdent":"U2Za1ErFZ70V5LOYWW0qFIfhrxPsoJGfMa7+XgNYHGk=","eSkeyId":"AAAB","eSkeyVal":"XTFdv9cjneMTVGgz9RePMDNWIfW+MqgPxVx5ldBZOWk=","eSkeySig":"9T1j0DyXg5eN74cZi0J74vDwLdX5kdJhL9emqZdhavj+Hs52tD+lXkpAcPpV3qt+k+Mco2CVsnqiZsK/xLEjBA==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgxBSSBDb21wYW5pb24YASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+{"level":30,"time":"2025-10-07T13:46:54.952Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)\n    at listOnTimeout (node:internal/timers:581:17)\n    at process.processTimers (node:internal/timers:519:7)","msg":"connection errored"}
+Connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+{"level":30,"time":"2025-10-07T13:47:00.184Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"1rvgcpeh4YgRgms1ArXDrh/AzUwuVL/7+cCmlYbJXCY="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-10-07T13:47:00.340Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAArw==","eKeytype":"BQ==","eIdent":"3mb/lD7PS4pAlHY61fgzpWh6FkYSyHP1osVagQmZvxw=","eSkeyId":"AAAB","eSkeyVal":"ADqgcm4LINOE+nJyNixvE97MijZr6wfn2DJBRFGRO1M=","eSkeySig":"h24oTJLX6YLN1VTElSv+fkg8hyWjFzBs0STryukzeghtieccfPGrWqjIMhLpNRFgX72t7iWD5qVjQhkSBFXzDA==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgxBSSBDb21wYW5pb24YASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+{"level":30,"time":"2025-10-07T13:49:40.739Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)\n    at listOnTimeout (node:internal/timers:581:17)\n    at process.processTimers (node:internal/timers:519:7)","msg":"connection errored"}
+Connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+{"level":30,"time":"2025-10-07T13:49:45.850Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"m/MWuoD2mSPYlrELZm+p1oiOfwNbtV4iEgPztyTTeno="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-10-07T13:49:45.892Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAA9Q==","eKeytype":"BQ==","eIdent":"L9txPmdqrLnaMmqUYQb8p/TrsFQqmRnZhR/7sixG5XI=","eSkeyId":"AAAB","eSkeyVal":"BKX1pqk1gKWp3eJrbcv0FkVuwwEeQ8Y7WChKmoEy1A4=","eSkeySig":"X7f0986ZhJF4mRRXK7/hQmZT//7AHfJtM6TGekGoqzMFx7n//ZimTIy6fklSak14KBKzIumCfHqT7HR20JZ+jQ==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgxBSSBDb21wYW5pb24YASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+{"level":30,"time":"2025-10-07T13:52:26.124Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)\n    at listOnTimeout (node:internal/timers:581:17)\n    at process.processTimers (node:internal/timers:519:7)","msg":"connection errored"}
+Connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+{"level":30,"time":"2025-10-07T13:52:31.315Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"+AT4hi49vdcnu/xmFGiu6MKiuOSlv1w4/cVo4I0R/n8="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-10-07T13:52:31.363Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAAhQ==","eKeytype":"BQ==","eIdent":"kaF3H6lyfQDVvM/Lor+1bKd6wUYhtHdCGHPsw1dq+1Y=","eSkeyId":"AAAB","eSkeyVal":"qXTTCNXzLO7/E9EJhl9cF30fuYYfe6a5VUJ6lx24tUA=","eSkeySig":"l9Rt6K3N2uHZNxxI3h5z9bTDkFcKFRk4IhCb9+dQ0I8UvAf2eSt4poVQAnaENycnrgHa/cAxQcO6xd7973VvgQ==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgxBSSBDb21wYW5pb24YASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+{"level":30,"time":"2025-10-07T13:55:11.584Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)\n    at listOnTimeout (node:internal/timers:581:17)\n    at process.processTimers (node:internal/timers:519:7)","msg":"connection errored"}
+Connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+{"level":30,"time":"2025-10-07T13:55:16.686Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"A9EftaJm8RoPKUhSbbYBlxhj86S16NIhbr24zPbt7gQ="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-10-07T13:55:16.708Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAAPg==","eKeytype":"BQ==","eIdent":"5dkKMNYHQvjxt/gQflHmFBRaLTbxfpUyCzuici89mlY=","eSkeyId":"AAAB","eSkeyVal":"x6/qs9a6p0tpb/vI6calrY6d47VylGLIk8Tho4WV6XE=","eSkeySig":"aNXOufy3kmZzJNorwcCsZQ1aNdSTS3NLcpKasRneC8Lv072mJTCUydj08QWLjEEnaBow+VfCoj09G7ud57jzBw==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgxBSSBDb21wYW5pb24YASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+{"level":30,"time":"2025-10-07T13:57:56.921Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)\n    at listOnTimeout (node:internal/timers:581:17)\n    at process.processTimers (node:internal/timers:519:7)","msg":"connection errored"}
+Connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+{"level":30,"time":"2025-10-07T13:58:02.311Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"qFRlvm8aw8CXwBomxmbOoNj+SfCPt8pH53rF+7fWHkg="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-10-07T13:58:02.423Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAACQ==","eKeytype":"BQ==","eIdent":"bGOOeG8NvhpmVPldhWJi3Yb9ZseRVcKRjxL2h0m0cX0=","eSkeyId":"AAAB","eSkeyVal":"vCZEDJ96G8flzfvo72CILrLqdEsJquvpMb6Wjx9RwXc=","eSkeySig":"dCcpK/NrKCg+tCWG8J9Db84z0ozKfppf9wxmBfhOO6EhDYYqF5Mf03YMz6Q03p5pQ8pDc/zDvCJBf+r9RavPDg==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgxBSSBDb21wYW5pb24YASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+{"level":30,"time":"2025-10-07T14:00:42.724Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","trace":"Error: QR refs attempts ended\n    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)\n    at listOnTimeout (node:internal/timers:581:17)\n    at process.processTimers (node:internal/timers:519:7)","msg":"connection errored"}
+Connection closed due to  Error: QR refs attempts ended
+    at Timeout.genPairQR [as _onTimeout] (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:471:21)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 408,
+    payload: {
+      statusCode: 408,
+      error: 'Request Time-out',
+      message: 'QR refs attempts ended'
+    },
+    headers: {}
+  }
+} , reconnecting  true
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+{"level":30,"time":"2025-10-07T14:00:48.107Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"ymR711KzxrX1dhu2KgNgi88DtwOLKYOSx7pDAuI7pzs="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-10-07T14:00:48.218Z","pid":237,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","devicePairingData":{"eRegid":"AAAAhw==","eKeytype":"BQ==","eIdent":"LU6Ckh2UGtOPg0cNorfDFuC94i7YTLroxxy2ObTGixM=","eSkeyId":"AAAB","eSkeyVal":"a1wOg2jj2NoX5chDhW7kbH28kl6Xhd6yRplYErBfr2c=","eSkeySig":"z6wMSYF7iZ09b3GhzazDV+jg/xom93gmYxic7gSUS5EOLxkj3mM9zOcDKQ/GRu94Z3r+ypPTfjyhIBDDKXrKDw==","buildHash":"c9lQeUMlTdrMrIi/+YcPiA==","deviceProps":"CgxBSSBDb21wYW5pb24YASAA"},"pull":false},"msg":"not logged in, attempting registration..."}
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully
+QR Code generated - scan with WhatsApp
+QR Code image generated successfully

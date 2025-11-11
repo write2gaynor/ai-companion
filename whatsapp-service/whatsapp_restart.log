@@ -1,0 +1,39 @@
+WhatsApp AI Companion service running on port 3001
+Initializing WhatsApp connection...
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+Connecting to WhatsApp...
+{"level":30,"time":"2025-11-09T22:33:02.560Z","pid":244,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"SBN8ZSJyYaCamVCu7lOFDNm9m8qgvyuU0DJscqquBAM="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-11-09T22:33:02.623Z","pid":244,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"username":"13453265836","passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","device":1,"pull":true},"msg":"logging in..."}
+{"level":30,"time":"2025-11-09T22:33:06.340Z","pid":244,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","trace":"Error: Connection Failure\n    at WebSocketClient.<anonymous> (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:515:13)\n    at WebSocketClient.emit (node:events:524:28)\n    at file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:230:35\n    at Object.decodeFrame (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Utils/noise-handler.js:140:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","msg":"connection errored"}
+Connection closed: {
+  reason: 'Connection Failure',
+  statusCode: 405,
+  shouldReconnect: true
+}
+Reconnecting in 5 seconds...
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+Connecting to WhatsApp...
+{"level":30,"time":"2025-11-09T22:33:11.472Z","pid":244,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"8pzoBIwNKx+zvonVWMBe9j6IDsW73qkiQ9nh9j889js="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-11-09T22:33:11.512Z","pid":244,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"username":"13453265836","passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","device":1,"pull":true},"msg":"logging in..."}
+{"level":30,"time":"2025-11-09T22:33:16.102Z","pid":244,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","trace":"Error: Connection Failure\n    at WebSocketClient.<anonymous> (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:515:13)\n    at WebSocketClient.emit (node:events:524:28)\n    at file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:230:35\n    at Object.decodeFrame (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Utils/noise-handler.js:140:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","msg":"connection errored"}
+Connection closed: {
+  reason: 'Connection Failure',
+  statusCode: 405,
+  shouldReconnect: true
+}
+Reconnecting in 5 seconds...
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+Connecting to WhatsApp...
+{"level":30,"time":"2025-11-09T22:33:21.292Z","pid":244,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"+rAIpXUgHPxBBJLXq8mjJYdWEL6daUFS9xUMTpKiRSU="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-11-09T22:33:21.423Z","pid":244,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"username":"13453265836","passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","device":1,"pull":true},"msg":"logging in..."}
+{"level":30,"time":"2025-11-09T22:33:25.686Z","pid":244,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","trace":"Error: Connection Failure\n    at WebSocketClient.<anonymous> (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:515:13)\n    at WebSocketClient.emit (node:events:524:28)\n    at file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:230:35\n    at Object.decodeFrame (file:///app/whatsapp-service/node_modules/@whiskeysockets/baileys/lib/Utils/noise-handler.js:140:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","msg":"connection errored"}
+Connection closed: {
+  reason: 'Connection Failure',
+  statusCode: 405,
+  shouldReconnect: true
+}
+Reconnecting in 5 seconds...
+⚠️ The printQRInTerminal option has been deprecated. You will no longer receive QR codes in the terminal automatically. Please listen to the connection.update event yourself and handle the QR your way. You can remove this message by removing this opttion. This message will be removed in a future version.
+Connecting to WhatsApp...
+{"level":30,"time":"2025-11-09T22:33:30.790Z","pid":244,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","browser":["AI Companion","Chrome","1.0.0"],"helloMsg":{"clientHello":{"ephemeral":"SURd+VM0n2IY2vaAx4UXWNP7dLOoPouURZbc1gQNd3k="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-11-09T22:33:30.851Z","pid":244,"hostname":"agent-env-30c240b4-78e4-442a-b6f2-82d871cc9a6f","class":"baileys","node":{"username":"13453265836","passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1023223821},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","device":1,"pull":true},"msg":"logging in..."}
