@@ -1,11 +1,44 @@
 {
-  "$schema": "https://railway.app/railway.schema.json",
-  "build": {
-    "builder": "NIXPACKS"
+  "name": "AI Companion App",
+  "description": "Personal AI companion with WhatsApp integration, personality awareness, and task management",
+  "image": "https://img.icons8.com/color/96/000000/android.png",
+  "repository": {
+    "url": "https://github.com/write2gaynor/ai-companion"
   },
-  "deploy": {
-    "numReplicas": 1,
-    "sleepApplication": false,
-    "restartPolicyType": "ON_FAILURE"
-  }
+  "services": [
+    {
+      "name": "backend",
+      "source": {
+        "repo": "write2gaynor/ai-companion",
+        "rootDirectory": "backend"
+      },
+      "env": {
+        "MONGO_URL": "mongodb+srv://User1:uSer1!@cluster0.dmppvno.mongodb.net/?appName=Cluster0",
+        "DB_NAME": "ai_companion_db",
+        "JWT_SECRET": "ai-companion-super-secure-jwt-key-2024-production",
+        "EMERGENT_LLM_KEY": "sk-emergent-89e55Cb06C69eB5A3A",
+        "CORS_ORIGINS": "*"
+      }
+    },
+    {
+      "name": "frontend", 
+      "source": {
+        "repo": "write2gaynor/ai-companion",
+        "rootDirectory": "frontend"
+      },
+      "env": {
+        "REACT_APP_BACKEND_URL": "${{backend.RAILWAY_PUBLIC_DOMAIN}}"
+      }
+    },
+    {
+      "name": "whatsapp-service",
+      "source": {
+        "repo": "write2gaynor/ai-companion", 
+        "rootDirectory": "whatsapp-service"
+      },
+      "env": {
+        "FASTAPI_URL": "${{backend.RAILWAY_PUBLIC_DOMAIN}}"
+      }
+    }
+  ]
 }
