@@ -206,7 +206,12 @@ const AuthScreen = () => {
             {isLogin && (
               <button
                 data-testid="forgot-password-btn"
-                onClick={() => alert('Contact support to reset your password: admin@aicompanion.com')}
+                onClick={() => {
+                  const username = prompt('Enter your username to reset password:');
+                  if (username) {
+                    alert(`Password reset instructions will be sent to the email associated with "${username}". \n\nFor now, try creating a new account or contact support.`);
+                  }
+                }}
                 className="text-sm text-blue-600 hover:text-blue-800 transition-colors block w-full"
               >
                 Forgot Password?
