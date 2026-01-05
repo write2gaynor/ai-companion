@@ -31,9 +31,19 @@ async function initWhatsApp() {
 
         sock = makeWASocket({
             auth: state,
-            printQRInTerminal: true,
+            printQRInTerminal: false,
             browser: ['AI Companion', 'Chrome', '1.0.0'],
-            defaultQueryTimeoutMs: 60000,
+            defaultQueryTimeoutMs: 30000,
+            connectTimeoutMs: 30000,
+            qrTimeout: 60000,
+            markOnlineOnConnect: false,
+            syncFullHistory: false,
+            fireInitQueries: false,
+            generateHighQualityLinkPreview: false,
+            patchMessageBeforeSending: (message) => {
+                message.deviceSentMessage = true
+                return message
+            }
         })
 
         sock.ev.on('connection.update', async (update) => {
