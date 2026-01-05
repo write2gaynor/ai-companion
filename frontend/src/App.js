@@ -202,7 +202,16 @@ const AuthScreen = () => {
               {isLogin ? 'Sign In' : 'Create Account'}
             </Button>
           </form>
-          <div className="mt-4 text-center">
+          <div className="mt-4 text-center space-y-2">
+            {isLogin && (
+              <button
+                data-testid="forgot-password-btn"
+                onClick={() => alert('Contact support to reset your password: admin@aicompanion.com')}
+                className="text-sm text-blue-600 hover:text-blue-800 transition-colors block w-full"
+              >
+                Forgot Password?
+              </button>
+            )}
             <button
               data-testid="toggle-auth-mode"
               onClick={() => setIsLogin(!isLogin)}
