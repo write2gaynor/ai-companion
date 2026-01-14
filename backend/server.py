@@ -357,18 +357,21 @@ async def chat_with_ai(chat_request: ChatRequest, user_id: str = Depends(get_cur
     await db.chat_messages.insert_one(user_msg_dict)
     
     try:
-        # Initialize Claude chat
+        # Initialize Claude chat with Anthropic SDK
         system_prompt = build_personality_prompt(personality_profile, context)
         
-        chat = LlmChat(
-            api_key=EMERGENT_LLM_KEY,
-            session_id=session_id,
-            system_message=system_prompt
-        ).with_model("anthropic", "claude-4-sonnet-20250514")
+        client = anthropic.Anthropic(api_key=EMERGENT_LLM_KEY)
         
         # Send message to Claude
-        user_msg = UserMessage(text=chat_request.message)
-        ai_response = await chat.send_message(user_msg)
+        message = client.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=1024,
+            system=system_prompt,
+            messages=[
+                {"role": "user", "content": chat_request.message}
+            ]
+        )
+        ai_response = message.content[0].text
         
         # Save AI response
         ai_message = ChatMessage(
