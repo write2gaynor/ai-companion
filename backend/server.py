@@ -560,16 +560,19 @@ Be helpful, supportive, and remember you're their personal AI friend. If they as
         # Get or create session for this user
         session_id = f"whatsapp_{user_doc['id']}"
         
-        # Initialize Claude chat
-        chat = LlmChat(
-            api_key=EMERGENT_LLM_KEY,
-            session_id=session_id,
-            system_message=whatsapp_prompt
-        ).with_model("anthropic", "claude-4-sonnet-20250514")
+        # Initialize Claude chat with Anthropic SDK
+        client = anthropic.Anthropic(api_key=EMERGENT_LLM_KEY)
         
         # Send message to Claude
-        user_msg = UserMessage(text=message_text)
-        ai_response = await chat.send_message(user_msg)
+        message = client.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=1024,
+            system=whatsapp_prompt,
+            messages=[
+                {"role": "user", "content": message_text}
+            ]
+        )
+        ai_response = message.content[0].text
         
         # Save the conversation to chat_messages
         # User message
